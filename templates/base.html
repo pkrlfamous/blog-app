@@ -1,0 +1,24 @@
+{% load static %}
+<html>
+
+<head>
+    <title>Django Blog</title>
+</head>
+
+<body>
+
+    <header>
+        <h1><a href="{% url 'home' %}">Django Blog</a></h1>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel='stylesheet'>
+        <link href="{% static 'css/base.css' %}" rel='stylesheet'>
+    </header>
+    <!-- Note that code between block content  and endblock content  can be filled -->
+    <!-- by other templates. Speaking of which, here is the code for home.html. -->
+    <h4>this is above division</h4>
+    <div>
+        {% block content %} {% endblock content %}
+    </div>
+    <h4>This is below division</h4>
+</body>
+
+</html>

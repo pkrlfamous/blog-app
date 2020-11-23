@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %}
+<!-- here object_list(as context object) is returned by the ListView 
+in views.py where object_list is associated with the individual blog 
+in the database as primary key.-->
+{% for post in object_list %}
+<div class="post-entry">
+    <!-- this url takes to the blog/urls and chooses the url pattern in this case
+    post/1/ is the pattern and according to the pattern it refers to the view
+    and the post.pk is the argument passed in <int:pk> field in urls.py file-->
+    <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+    <p>{{ post.body }}</p>
+</div>
+{% endfor %} {% endblock content %}

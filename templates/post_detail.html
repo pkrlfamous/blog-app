@@ -1,0 +1,8 @@
+{% extends 'base.html' %} {% block content %}
+<div class='post-entry'>
+    <!-- here object is our context object returned by the DetailView-->
+    <!-- in views.py and instead of objct we can use post as small version of Post from model Post-->
+    <h2>{{ object.title}}</h2>
+    <p>{{ object.body }}</p>
+</div>
+{% endblock content %}
