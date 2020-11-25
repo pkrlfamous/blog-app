@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+<h1>New Post</h1>
+<!-- using form tag with post method i.e method= "post" cause we are 
+receiving data if we were to get data eg for search we would use GET
+-->
+<!-- {% csrf_token %} is a tag which django provides to protect our form
+from cross site scripting attacks and should use with every form-->
+
+<!-- {{ form.as_p }} tag helps to render the data from the field list
+in view.py and creates form within paragraph <p> tags -->
+
+
+<form action="" method="post">{% csrf_token %} {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+{% endblock content %}

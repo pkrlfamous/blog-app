@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Delete Post</h1>
+<form action="" method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ post.title }}"?</p>
+    <!-- We could also
+just use object.title as it too is provided by DetailView-->
+    <input type="submit" value="Confirm">
+</form>
+{% endblock content%}

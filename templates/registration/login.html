@@ -1,0 +1,9 @@
+{% extends 'base.html' %}{% block content%}
+<h2>Log In</h2>
+<form method="post">{% csrf_token %} {{form.as_p}}
+    <button type="submit"> Log In </button>
+</form>
+{% endblock content %}
+<!-- Upon entering the log in info for our superuser account, we are redirected to the
+homepage. Notice that we didn’t add any view logic or create a database model
+because the Django auth system provided both for us automatically. Thanks Django! -->

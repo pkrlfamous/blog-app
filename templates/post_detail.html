@@ -1,8 +1,12 @@
 {% extends 'base.html' %} {% block content %}
 <div class='post-entry'>
-    <!-- here object is our context object returned by the DetailView-->
-    <!-- in views.py and instead of objct we can use post as small version of Post from model Post-->
-    <h2>{{ object.title}}</h2>
+    <!-- here object is our context object returned by the DetailView
+in views.py and instead of objct we can use post as small version of Post from model Post-->
+    <h2>{{ post.title}}</h2>
     <p>{{ object.body }}</p>
 </div>
+<p><a href="{% url 'post_edit' post.pk %}">+ Edit Blog Post</a></p>
+<p><a href="{% url 'post_delete' post.pk %}">+ Delete Blog Post</a></p>
 {% endblock content %}
+<!-- here we have declared our url name as post_edit and passed needed
+parameter, which is the primary key of the post post.pk -->
